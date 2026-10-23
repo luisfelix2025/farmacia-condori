@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-ambroxol" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+    <linearGradient id="caja-amb" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="liquido-jarabe" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="50%" stop-color="#92400e"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <filter id="sombras-amb" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg-ambroxol)"/>
+  <circle cx="340" cy="70" r="90" fill="#34d399" opacity="0.2"/>
+  <circle cx="70" cy="230" r="100" fill="#059669" opacity="0.12"/>
+
+  <!-- Caja de Ambroxol -->
+  <g filter="url(#sombras-amb)">
+    <rect x="50" y="65" width="200" height="155" rx="10" fill="url(#caja-amb)" stroke="#a7f3d0" stroke-width="2"/>
+    <path d="M 50 75 Q 50 65 60 65 L 240 65 Q 250 65 250 75 L 250 105 L 50 105 Z" fill="#059669"/>
+    <text x="70" y="92" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">FARMACIA CONDORI</text>
+
+    <text x="70" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#0f172a">AMBROXOL</text>
+    <text x="70" y="168" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" fill="#059669">15 mg/5 ml • Jarabe</text>
+    <text x="70" y="192" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Expectorante y alivio de la tos con flema</text>
+
+    <!-- Indicador de frasco 120ml -->
+    <rect x="70" y="202" width="70" height="12" rx="3" fill="#d1fae5"/>
+    <text x="75" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#047857">FRASCO 120 ml</text>
+  </g>
+
+  <!-- Frasco de jarabe ámbar con etiqueta -->
+  <g filter="url(#sombras-amb)">
+    <!-- Botella de vidrio ámbar -->
+    <rect x="250" y="105" width="75" height="135" rx="15" fill="url(#liquido-jarabe)" stroke="#451a03" stroke-width="1.5"/>
+    <!-- Cuello de la botella -->
+    <rect x="270" y="88" width="35" height="20" rx="3" fill="#78350f"/>
+    <!-- Tapa blanca con precinto -->
+    <rect x="267" y="73" width="41" height="18" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Etiqueta del jarabe -->
+    <rect x="252" y="130" width="71" height="85" fill="#ffffff"/>
+    <rect x="252" y="130" width="71" height="14" fill="#059669"/>
+    <text x="257" y="141" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#ffffff">AMBROXOL</text>
+    <text x="259" y="160" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="bold" fill="#0f172a">Jarabe</text>
+    <text x="259" y="174" font-family="'Segoe UI', Roboto, sans-serif" font-size="7" fill="#64748b">Expectorante</text>
+
+    <!-- Vaso dosificador transparente -->
+    <path d="M 320 185 L 348 185 L 344 235 L 324 235 Z" fill="#ffffff" opacity="0.8" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="322" y1="200" x2="330" y2="200" stroke="#059669" stroke-width="1.5"/>
+    <line x1="323" y1="215" x2="332" y2="215" stroke="#059669" stroke-width="1.5"/>
+  </g>
+</svg>

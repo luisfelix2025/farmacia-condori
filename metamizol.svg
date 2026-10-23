@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-metamizol" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf4ff"/>
+      <stop offset="100%" stop-color="#f3e8ff"/>
+    </linearGradient>
+    <linearGradient id="caja-m" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#faf5ff"/>
+    </linearGradient>
+    <filter id="sombras-m" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg-metamizol)"/>
+  <circle cx="320" cy="80" r="95" fill="#d8b4fe" opacity="0.2"/>
+  <circle cx="70" cy="220" r="90" fill="#9333ea" opacity="0.1"/>
+
+  <!-- Caja de Metamizol Sódico -->
+  <g filter="url(#sombras-m)">
+    <rect x="50" y="65" width="210" height="155" rx="10" fill="url(#caja-m)" stroke="#e9d5ff" stroke-width="2"/>
+    <path d="M 50 75 Q 50 65 60 65 L 250 65 Q 260 65 260 75 L 260 105 L 50 105 Z" fill="#9333ea"/>
+    <text x="70" y="92" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">FARMACIA CONDORI</text>
+
+    <text x="70" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#0f172a">METAMIZOL</text>
+    <text x="70" y="168" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" fill="#9333ea">1 g • Gotas &amp; Comprimidos</text>
+    <text x="70" y="192" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Analgésico potente contra el dolor</text>
+
+    <rect x="70" y="202" width="75" height="12" rx="3" fill="#f3e8ff"/>
+    <text x="75" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#7e22ce">ACCIÓN RÁPIDA</text>
+  </g>
+
+  <!-- Frasquito de gotas de Metamizol -->
+  <g filter="url(#sombras-m)">
+    <!-- Frasco ámbar -->
+    <rect x="250" y="125" width="65" height="95" rx="12" fill="#78350f" stroke="#451a03" stroke-width="1.5"/>
+    <!-- Etiqueta del frasco -->
+    <rect x="253" y="145" width="59" height="55" fill="#ffffff"/>
+    <rect x="253" y="145" width="59" height="12" fill="#9333ea"/>
+    <text x="256" y="154" font-family="'Segoe UI', Roboto, sans-serif" font-size="7" font-weight="bold" fill="#ffffff">METAMIZOL</text>
+    <text x="263" y="172" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="bold" fill="#0f172a">Gotas</text>
+    <text x="264" y="185" font-family="'Segoe UI', Roboto, sans-serif" font-size="7" fill="#64748b">20 ml</text>
+    
+    <!-- Gotero y tapa blanca -->
+    <rect x="268" y="105" width="29" height="20" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <!-- Pipeta de goma -->
+    <path d="M 276 105 Q 282 92 289 105 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    
+    <!-- Gota cayendo -->
+    <path d="M 335 155 Q 330 168 335 174 A 5 5 0 0 0 340 174 Q 345 168 335 155 Z" fill="#a855f7"/>
+  </g>
+</svg>

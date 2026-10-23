@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-amox" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+    <linearGradient id="caja-a" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="capsula-rojo" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="capsula-amarillo" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <filter id="sombras-a" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg-amox)"/>
+  <circle cx="340" cy="70" r="90" fill="#4ade80" opacity="0.2"/>
+  <circle cx="60" cy="230" r="100" fill="#16a34a" opacity="0.12"/>
+
+  <!-- Caja de Amoxicilina -->
+  <g filter="url(#sombras-a)">
+    <rect x="50" y="65" width="210" height="155" rx="10" fill="url(#caja-a)" stroke="#bbf7d0" stroke-width="2"/>
+    <path d="M 50 75 Q 50 65 60 65 L 250 65 Q 260 65 260 75 L 260 105 L 50 105 Z" fill="#16a34a"/>
+    <text x="70" y="92" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">FARMACIA CONDORI</text>
+
+    <text x="70" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#0f172a">AMOXICILINA</text>
+    <text x="70" y="168" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" fill="#16a34a">500 mg • Cápsulas</text>
+    <text x="70" y="192" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Tratamiento de infecciones bacterianas</text>
+
+    <!-- Etiqueta antibiótico -->
+    <rect x="70" y="202" width="85" height="12" rx="3" fill="#dcfce7"/>
+    <text x="75" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#15803d">ANTIBIÓTICO</text>
+  </g>
+
+  <!-- Cápsulas bicolores icónicas de Amoxicilina -->
+  <g filter="url(#sombras-a)" transform="rotate(25 280 180)">
+    <!-- Cápsula 1 -->
+    <g transform="translate(250, 110)">
+      <!-- Mitad roja -->
+      <path d="M 0 15 A 15 15 0 0 1 30 15 L 30 35 L 0 35 Z" fill="url(#capsula-rojo)"/>
+      <!-- Mitad amarilla -->
+      <path d="M 0 35 L 30 35 L 30 55 A 15 15 0 0 1 0 55 Z" fill="url(#capsula-amarillo)"/>
+      <line x1="0" y1="35" x2="30" y2="35" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+    </g>
+
+    <!-- Cápsula 2 -->
+    <g transform="translate(290, 140) rotate(-45)">
+      <path d="M 0 15 A 15 15 0 0 1 30 15 L 30 35 L 0 35 Z" fill="url(#capsula-rojo)"/>
+      <path d="M 0 35 L 30 35 L 30 55 A 15 15 0 0 1 0 55 Z" fill="url(#capsula-amarillo)"/>
+      <line x1="0" y1="35" x2="30" y2="35" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+    </g>
+
+    <!-- Cápsula 3 -->
+    <g transform="translate(230, 170) rotate(35)">
+      <path d="M 0 15 A 15 15 0 0 1 30 15 L 30 35 L 0 35 Z" fill="url(#capsula-rojo)"/>
+      <path d="M 0 35 L 30 35 L 30 55 A 15 15 0 0 1 0 55 Z" fill="url(#capsula-amarillo)"/>
+      <line x1="0" y1="35" x2="30" y2="35" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Farmacia Condori - Medicamentos confiables y atención de alta calidad.">
+    <title>Farmacia Condori</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <div class="marca-header">
+            <img src="logo.svg" alt="Logo de Farmacia Condori" class="logo-farmacia" width="75" height="75">
+            <div class="marca-texto">
+                <h1>Farmacia Condori</h1>
+                <p>Farmacia con medicamentos confiables</p>
+                <p id="aviso-stock"></p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN DE PRODUCTOS Y FILTROS -->
+        <section id="productos">
+            <h2>Nuestros productos</h2>
+
+            <div class="controles">
+                <label for="buscador" class="visualmente-oculto">
+                    Buscar productos
+                </label>
+
+                <input type="search" id="buscador" placeholder="Buscar un medicamento...">
+
+                <div id="filtros">
+                    <button type="button" class="activo" data-categoria="todos">
+                        Todos
+                    </button>
+                    <button type="button" data-categoria="Analgésicos">
+                        Analgésicos
+                    </button>
+                    <button type="button" data-categoria="Antibióticos">
+                        Antibióticos
+                    </button>
+                    <button type="button" data-categoria="Vitaminas">
+                        Vitaminas
+                    </button>
+                    <button type="button" data-categoria="Jarabes">
+                        Jarabes
+                    </button>
+                </div>
+            </div>
+
+            <p id="resultado" aria-live="polite"></p>
+
+            <!-- Las tarjetas se generan dinámicamente con render.js desde datos.js -->
+            <div id="lista-productos"></div>
+        </section>
+
+        <!-- SECCIÓN DE HORARIOS Y PRECIOS -->
+        <section id="horarios">
+            <h2>Horarios de atención</h2>
+            <p>Lunes a sábado, de 08:00 a 20:00.</p>
+
+            <table>
+                <caption>Medicamentos y disponibilidad</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Medicamento</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Disponible</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Analgésicos</td>
+                        <td>Bs 10</td>
+                        <td>Todos los días</td>
+                    </tr>
+                    <tr>
+                        <td>Antibióticos</td>
+                        <td>Bs 14</td>
+                        <td>Todos los días</td>
+                    </tr>
+                    <tr>
+                        <td>Jarabes</td>
+                        <td>Bs 20</td>
+                        <td>Todos los días</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN DE CATEGORÍAS (GALERÍA) -->
+        <section id="galeria">
+            <h2>Nuestras categorías</h2>
+
+            <div class="contenedor-galeria">
+                <figure>
+                    <img src="analgesicos.jpg" alt="Analgésicos de la farmacia" width="600" height="400">
+                    <figcaption>Analgésicos de alta calidad</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="antibioticoss.jpg" alt="Antibióticos de la farmacia" width="600" height="400">
+                    <figcaption>Antibióticos de alta calidad</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="jarave.jpg" alt="Jarabes para la tos" width="600" height="400">
+                    <figcaption>Jarabes buenos para la tos</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="vitaminas.jpg" alt="Vitaminas" width="600" height="400">
+                    <figcaption>Vitaminas buenas para los niños</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PEDIDO -->
+        <section id="pedido">
+            <h2>Hacer un pedido</h2>
+
+            <form action="/pedido" method="post">
+                <fieldset>
+                    <legend>Tus datos</legend>
+
+                    <p>
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                    </p>
+
+                    <p>
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </p>
+
+                    <p>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" autocomplete="tel" pattern="[0-9]{7,8}"
+                            title="7 u 8 dígitos, sin espacios">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu pedido</legend>
+
+                    <p>
+                        <label for="producto">Producto</label>
+                        <select id="producto" name="producto" required>
+                            <option value="">Elige uno</option>
+                            <option value="analgesicos">Analgésicos</option>
+                            <option value="jarabe">Jarabe</option>
+                            <option value="drasil">Drasil para resfrío</option>
+                            <option value="vitaminas">Vitaminas</option>
+                            <option value="antibioticos">Antibióticos</option>
+                            <option value="jarabe-tos">Jarabes para la tos</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="100" value="1" required>
+                    </p>
+
+                    <p>
+                        <label for="fecha">Fecha de entrega</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </p>
+
+                    <p>
+                        <label for="notas">Alguna indicación</label>
+                        <textarea id="notas" name="notas" rows="3"></textarea>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">Acepto que el pedido se confirma por teléfono</label>
+                    </p>
+                </fieldset>
+
+                <button type="submit">Enviar pedido</button>
+            </form>
+        </section>
+    </main>
+
+    <aside>
+        <h2>¿Sabías?</h2>
+        <p>En nuestra farmacia contamos con medicamentos y productos para el cuidado de tu salud.</p>
+    </aside>
+
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <address>
+            Av. Principal viacha<br>
+            Colquencha, La Paz<br>
+            Teléfono: 64072425<br>
+            Farmacia Condori
+        </address>
+        <p><small>&copy; 2026 Farmacia Condori</small></p>
+    </footer>
+
+    <!-- SCRIPTS EN ORDEN DE EJECUCIÓN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="jQuery.js"></script>
+    <script src="datos.js"></script>
+    <script src="funciones.js"></script>
+    <script src="render.js"></script>
+    <script src="eventos.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

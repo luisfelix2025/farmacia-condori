@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-paracetamol" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+    <linearGradient id="caja-p" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="blister-foil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <filter id="sombras" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo clínico -->
+  <rect width="400" height="300" fill="url(#bg-paracetamol)"/>
+  <circle cx="340" cy="60" r="90" fill="#38bdf8" opacity="0.18"/>
+  <circle cx="60" cy="240" r="110" fill="#0284c7" opacity="0.12"/>
+
+  <!-- Caja de Paracetamol -->
+  <g filter="url(#sombras)">
+    <rect x="50" y="65" width="200" height="155" rx="10" fill="url(#caja-p)" stroke="#e2e8f0" stroke-width="2"/>
+    <!-- Franja de color analgésico azul -->
+    <path d="M 50 75 Q 50 65 60 65 L 240 65 Q 250 65 250 75 L 250 105 L 50 105 Z" fill="#0284c7"/>
+    <text x="70" y="92" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">FARMACIA CONDORI</text>
+    
+    <!-- Cruz médica -->
+    <rect x="210" y="77" width="20" height="6" rx="2" fill="#ffffff"/>
+    <rect x="217" y="70" width="6" height="20" rx="2" fill="#ffffff"/>
+
+    <text x="70" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#0f172a">PARACETAMOL</text>
+    <text x="70" y="168" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" fill="#0284c7">500 mg • Tabletas</text>
+    <text x="70" y="192" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Alivio eficaz del dolor y la fiebre</text>
+
+    <!-- Indicador de 20 tabletas -->
+    <rect x="70" y="202" width="68" height="12" rx="3" fill="#e0f2fe"/>
+    <text x="75" y="211" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#0369a1">20 TABLETAS</text>
+  </g>
+
+  <!-- Blister de pastillas enfrente -->
+  <g filter="url(#sombras)">
+    <rect x="180" y="115" width="165" height="125" rx="8" fill="url(#blister-foil)" stroke="#cbd5e1" stroke-width="1.5"/>
+    
+    <!-- Ranura blister -->
+    <line x1="262" y1="120" x2="262" y2="235" stroke="#94a3b8" stroke-dasharray="4,3"/>
+    
+    <!-- Pastillas redondas Paracetamol -->
+    <!-- Columna 1 -->
+    <circle cx="220" cy="145" r="16" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="210" y1="145" x2="230" y2="145" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <circle cx="220" cy="180" r="16" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="210" y1="180" x2="230" y2="180" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <circle cx="220" cy="215" r="16" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="210" y1="215" x2="230" y2="215" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Columna 2 -->
+    <circle cx="305" cy="145" r="16" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="295" y1="145" x2="315" y2="145" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <circle cx="305" cy="180" r="16" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="295" y1="180" x2="315" y2="180" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <circle cx="305" cy="215" r="16" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="295" y1="215" x2="315" y2="215" stroke="#cbd5e1" stroke-width="1.5"/>
+  </g>
+</svg>
