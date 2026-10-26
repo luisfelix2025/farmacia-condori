@@ -21,11 +21,15 @@
             </div>
         </div>
         <nav>
+<button type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav-movil">Menú</button>
+        <nav id="nav-movil" hidden>
             <ul>
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#horarios">Horarios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#panel">Panel</a></li>
             </ul>
+        </nav>
         </nav>
     </header>
 
@@ -192,6 +196,53 @@
                 <button type="submit">Enviar pedido</button>
             </form>
         </section>
+
+
+
+        <!-- ── PANEL DEL DÍA 11 ──────────────────────────────────────────── -->
+        <section id="panel">
+            <h2>Panel del proyecto</h2>
+
+            <button type="button" id="panel-toggle" aria-expanded="false" aria-controls="menu-movil">
+                Menú
+            </button>
+            <nav id="menu-movil" hidden>
+                <ul>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#horarios">Horarios</a></li>
+                    <li><a href="#pedido">Pedido</a></li>
+                    <li><a href="#panel">Panel</a></li>
+                </ul>
+            </nav>
+
+            <div id="acordeon">
+                <div class="item">
+                    <button type="button" class="titulo" aria-expanded="false">¿Hacen pedidos por encargo?</button>
+                    <div class="cuerpo" hidden>
+                        <p>Sí, con 24 horas de anticipación para medicamentos de alta demanda o pedidos especiales.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <button type="button" class="titulo" aria-expanded="false">¿Tienen delivery?</button>
+                    <div class="cuerpo" hidden>
+                        <p>En un radio de diez cuadras (zona Viacha y Colquencha), sin costo adicional.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <button type="button" class="titulo" aria-expanded="false">¿Qué formas de pago aceptan?</button>
+                    <div class="cuerpo" hidden>
+                        <p>Efectivo y código QR.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="mostrar-avisos">Mostrar avisos</button>
+            <ul id="avisos">
+                <li hidden>Hoy llegaron jarabes y analgésicos con stock renovado.</li>
+                <li hidden>Atención continua de lunes a sábado hasta las 20:00.</li>
+                <li hidden>Atención de emergencias y consultas al 64072425.</li>
+            </ul>
+        </section>
     </main>
 
     <aside>
@@ -211,13 +262,14 @@
     </footer>
 
     <!-- SCRIPTS EN ORDEN DE EJECUCIÓN -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="jQuery.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
     <script src="datos.js"></script>
     <script src="funciones.js"></script>
     <script src="render.js"></script>
     <script src="eventos.js"></script>
     <script src="app.js"></script>
+
+    <script src="jquery-panel.js"></script>
 </body>
 
 </html>

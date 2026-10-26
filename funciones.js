@@ -52,7 +52,8 @@ console.log(aplicarDescuento(100, 20), conImpuesto(100));
 console.log(conImpuesto(100).toFixed(2));
 
 // ── 6. LAS FUNCIONES SON VALORES ────────────────────────────────────────
-const operacion = calcularTotal;
+const 
+operacion = calcularTotal;
 console.log(operacion(1.5, 4));
 
 function aplicarATodos(lista, fn) {
