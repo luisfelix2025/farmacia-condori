@@ -6,30 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Farmacia Condori - Medicamentos confiables y atención de alta calidad.">
     <title>Farmacia Condori</title>
-    <link rel="icon" type="image/svg+xml" href="logo.svg">
     <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
-    <header>
-        <div class="marca-header">
-            <img src="logo.svg" alt="Logo de Farmacia Condori" class="logo-farmacia" width="75" height="75">
-            <div class="marca-texto">
-                <h1>Farmacia Condori</h1>
-                <p>Farmacia con medicamentos confiables</p>
-                <p id="aviso-stock"></p>
-            </div>
+    <header class="encabezado">
+        <div class="marca">
+            <img src="logo.svg" alt="Logo de Farmacia Condori" class="logo">
+            <h1>Farmacia Condori</h1>
         </div>
+        <p>Farmacia con medicamentos confiables</p>
+        <p id="aviso-stock"></p>
         <nav>
-<button type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav-movil">Menú</button>
-        <nav id="nav-movil" hidden>
             <ul>
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="#horarios">Horarios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#panel">Panel</a></li>
+                <li><a href="#panel">panel</a></li>
             </ul>
-        </nav>
         </nav>
     </header>
 
@@ -196,21 +190,58 @@
                 <button type="submit">Enviar pedido</button>
             </form>
         </section>
+        <!-- ── ZONA DEL DÍA 13: LA PÁGINA RECUERDA ──────────────────────── -->
+        <section id="preferencias">
+            <h2>Tus preferencias</h2>
 
+            <button type="button" id="tema-toggle" aria-pressed="false">Modo oscuro</button>
 
+            <label for="orden">Ordenar por</label>
+            <select id="orden">
+                <option value="nombre">Nombre</option>
+                <option value="precio">Precio</option>
+                <option value="stock">Stock</option>
+            </select>
 
+            <button type="button" id="olvidar">Olvidar mis preferencias</button>
+
+            <p id="estado-prefs" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- ── ZONA DEL DÍA 13: DÓNDE ESTÁ EL USUARIO ───────────────────── -->
+        <section id="ubicacion">
+            <h2>¿Estás cerca?</h2>
+            <p>Calculamos la distancia hasta el local. Tu ubicación no sale de tu navegador.</p>
+
+            <button type="button" id="ubicarme">Calcular mi distancia</button>
+            <p id="estado-ubicacion" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- ── ZONA DEL DÍA 12: DATOS QUE LLEGAN POR LA RED ─────────────── -->
+        <section id="remoto">
+            <h2>Catálogo del proveedor</h2>
+
+            <button type="button" id="cargar-fetch">Cargar con fetch</button>
+            <button type="button" id="cargar-jquery">Cargar con jQuery</button>
+            <button type="button" id="cargar-roto">Probar un error</button>
+
+            <p id="estado" role="status" aria-live="polite"></p>
+
+            <div id="lista-remota"></div>
+        </section>
         <!-- ── PANEL DEL DÍA 11 ──────────────────────────────────────────── -->
         <section id="panel">
             <h2>Panel del proyecto</h2>
 
-            <button type="button" id="panel-toggle" aria-expanded="false" aria-controls="menu-movil">
+            <button type="button" id="menu-toggle" aria-expanded="false" aria-controls="menu-movil">
                 Menú
             </button>
-            <nav id="menu-movil" hidden>
+
+            <nav id="menu-movil">
                 <ul>
                     <li><a href="#productos">Productos</a></li>
                     <li><a href="#horarios">Horarios</a></li>
-                    <li><a href="#pedido">Pedido</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                     <li><a href="#panel">Panel</a></li>
                 </ul>
             </nav>
@@ -219,13 +250,13 @@
                 <div class="item">
                     <button type="button" class="titulo" aria-expanded="false">¿Hacen pedidos por encargo?</button>
                     <div class="cuerpo" hidden>
-                        <p>Sí, con 24 horas de anticipación para medicamentos de alta demanda o pedidos especiales.</p>
+                        <p>Sí, con 24 horas de anticipación y un mínimo de una docena.</p>
                     </div>
                 </div>
                 <div class="item">
                     <button type="button" class="titulo" aria-expanded="false">¿Tienen delivery?</button>
                     <div class="cuerpo" hidden>
-                        <p>En un radio de diez cuadras (zona Viacha y Colquencha), sin costo adicional.</p>
+                        <p>En un radio de diez cuadras, sin costo adicional.</p>
                     </div>
                 </div>
                 <div class="item">
@@ -238,11 +269,15 @@
 
             <button type="button" id="mostrar-avisos">Mostrar avisos</button>
             <ul id="avisos">
-                <li hidden>Hoy llegaron jarabes y analgésicos con stock renovado.</li>
-                <li hidden>Atención continua de lunes a sábado hasta las 20:00.</li>
-                <li hidden>Atención de emergencias y consultas al 64072425.</li>
+                <li hidden>Tenemos medicamentos y productos de cuidado personal.</li>
+                <li hidden>Atendemos de lunes a sábado de 08:00 a 22:00.</li>
+                <li hidden>Algunos medicamentos requieren receta médica.</li>
+                <li hidden>Consulta al farmacéutico si tienes dudas sobre un medicamento.</li>
+                <li hidden>Revisa la fecha de vencimiento antes de utilizar un medicamento.</li>
+                <li hidden>Tu salud y bienestar son nuestra prioridad.</li>
             </ul>
         </section>
+
     </main>
 
     <aside>
@@ -262,14 +297,17 @@
     </footer>
 
     <!-- SCRIPTS EN ORDEN DE EJECUCIÓN -->
-    <script src="jquery-3.7.1.min.js"></script>
     <script src="datos.js"></script>
     <script src="funciones.js"></script>
     <script src="render.js"></script>
     <script src="eventos.js"></script>
     <script src="app.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="jquery-comparado.js"></script>
     <script src="jquery-panel.js"></script>
+    <script src="remoto.js"></script>
+    <script src="preferencias.js"></script>
 </body>
 
 </html>

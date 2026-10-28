@@ -1,0 +1,135 @@
+{
+  "_nota": "Datos reales de Farmacia Condori - Colquencha, La Paz (Bolivia). Sincronizados con el arreglo 'productos' de datos.js. Moneda: Bolivianos (Bs).",
+  "negocio": {
+    "nombre": "Farmacia Condori",
+    "direccion": "Av. Principal Viacha, Colquencha, La Paz",
+    "telefono": "64072425",
+    "coordenadas": {
+      "lat": -17.0,
+      "lng": -68.08
+    },
+    "horario": {
+      "apertura": "08:00",
+      "cierre": "20:00",
+      "dias": "Lunes a sábado"
+    }
+  },
+  "categorias": [
+    "Analgésicos",
+    "Antibióticos",
+    "Jarabes",
+    "Vitaminas"
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Paracetamol",
+      "categoria": "Analgésicos",
+      "precio": 10.00,
+      "unidad": "caja",
+      "stock": 40,
+      "disponible": true,
+      "imagen": "paracetamol.svg",
+      "descripcion": "Para aliviar el dolor muscular y de cabeza."
+    },
+    {
+      "id": 2,
+      "nombre": "Diclofenaco",
+      "categoria": "Analgésicos",
+      "precio": 8.00,
+      "unidad": "caja",
+      "stock": 25,
+      "disponible": true,
+      "imagen": "diclofenaco.svg",
+      "descripcion": "Para aliviar el dolor muscular y de cabeza."
+    },
+    {
+      "id": 3,
+      "nombre": "Metamizol",
+      "categoria": "Analgésicos",
+      "precio": 12.00,
+      "unidad": "caja",
+      "stock": 8,
+      "disponible": true,
+      "imagen": "metamizol.svg",
+      "descripcion": "Para aliviar el dolor muscular y de cabeza."
+    },
+    {
+      "id": 4,
+      "nombre": "Amoxicilina",
+      "categoria": "Antibióticos",
+      "precio": 14.00,
+      "unidad": "caja",
+      "stock": 20,
+      "disponible": true,
+      "imagen": "amoxicilina.svg",
+      "descripcion": "Medicamento utilizado para tratar infecciones bacterianas."
+    },
+    {
+      "id": 5,
+      "nombre": "Azitromicina",
+      "categoria": "Antibióticos",
+      "precio": 25.00,
+      "unidad": "caja",
+      "stock": 12,
+      "disponible": true,
+      "imagen": "azitromicina.svg",
+      "descripcion": "Antibiótico eficaz para infecciones respiratorias."
+    },
+    {
+      "id": 6,
+      "nombre": "Ambroxol",
+      "categoria": "Jarabes",
+      "precio": 27.50,
+      "unidad": "frasco",
+      "stock": 0,
+      "disponible": false,
+      "imagen": "ambroxol.svg",
+      "descripcion": "Para aliviar la tos y otros síntomas respiratorios."
+    },
+    {
+      "id": 7,
+      "nombre": "Cloperastina",
+      "categoria": "Jarabes",
+      "precio": 22.00,
+      "unidad": "frasco",
+      "stock": 30,
+      "disponible": true,
+      "imagen": "cloperastina.svg",
+      "descripcion": "Para aliviar la tos y otros síntomas respiratorios."
+    },
+    {
+      "id": 8,
+      "nombre": "Acetilcisteína",
+      "categoria": "Jarabes",
+      "precio": 45.00,
+      "unidad": "frasco",
+      "stock": 2,
+      "disponible": true,
+      "imagen": "acetilcisteina.svg",
+      "descripcion": "Para aliviar la tos y otros síntomas respiratorios."
+    },
+    {
+      "id": 9,
+      "nombre": "Vitaminas liposolubles",
+      "categoria": "Vitaminas",
+      "precio": 18.00,
+      "unidad": "frasco",
+      "stock": 50,
+      "disponible": true,
+      "imagen": "vitaminas_liposolubles.svg",
+      "descripcion": "Para complementar una alimentación saludable."
+    },
+    {
+      "id": 10,
+      "nombre": "Vitaminas hidrosolubles",
+      "categoria": "Vitaminas",
+      "precio": 15.00,
+      "unidad": "frasco",
+      "stock": 0,
+      "disponible": false,
+      "imagen": "vitaminas_hidrosolubles.svg",
+      "descripcion": "Para complementar una alimentación saludable."
+    }
+  ]
+}

@@ -20,7 +20,7 @@ Este archivo contiene la memoria del proyecto, su arquitectura, convenciones de 
 
 - **HTML5:** Marcado semántico (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<figure>`, `<fieldset>`).
 - **CSS3:** Vanilla CSS organizado por secciones con variables CSS (`:root`), Flexbox y CSS Grid para la galería de categorías.
-- **JavaScript:** ES6+ puro (modularizado por responsabilidades) + jQuery 3.7.1 local para micro-interacciones, efectos y animaciones.
+- **JavaScript:** ES6+ puro (modularizado por responsabilidades) + jQuery 3.7.1 cargado desde CDN para micro-interacciones, efectos y animaciones.
 
 ---
 
@@ -35,9 +35,9 @@ proyecto_1_luis/
 ├── render.js                      # Generación dinámica de tarjetas en el DOM
 ├── eventos.js                     # Búsqueda, filtros por categoría y validación de formulario
 ├── app.js                         # Estado general, variables de demostración y avisos de stock
-├── jquery-3.7.1.min.js            # Biblioteca jQuery 3.7.1 minificada local
 ├── jquery-comparado.js            # Comparación interactiva DOM: Vanilla JS vs jQuery (#comparacion)
 ├── jquery-panel.js                # Efectos del Día 11: slideToggle menú, acordeón de preguntas y avisos escalonados
+├── remoto.js                      # Carga el catálogo remoto con fetch y jQuery
 ├── ERRORES Y ARREGLOS - leer primero.txt  # Registro histórico de depuración
 ├── README.md                      # Documentación del proyecto y laboratorios
 └── *.svg / *.jpg / *.png          # Recursos gráficos (iconos de medicamentos y fotos)
@@ -90,14 +90,15 @@ proyecto_1_luis/
 El orden de carga al final del `<body>` es obligatorio para evitar referencias `undefined` o elementos no inicializados:
 
 ```html
-<script src="jquery-3.7.1.min.js"></script>
 <script src="datos.js"></script>
 <script src="funciones.js"></script>
 <script src="render.js"></script>
 <script src="eventos.js"></script>
 <script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="jquery-comparado.js"></script>
 <script src="jquery-panel.js"></script>
+<script src="remoto.js"></script>
 ```
 
 ---
@@ -124,3 +125,11 @@ El orden de carga al final del `<body>` es obligatorio para evitar referencias `
    - Usar `aria-expanded` y `aria-controls` en botones desplegables del panel.
 7. **Diseño Visual:**
    - Paleta oficial: Fondo celeste (`#87CEEB`), superficie turquesa (`#40E0D0`), primario azul marino (`#1a4a7a`), acento teja/naranja (`#b8471f`).
+
+## 6. Estado Verificado (2026-10-27)
+
+- La navegación principal de `index.html` es una lista de enlaces dentro de `<nav>` y se muestra horizontalmente. No tiene botón desplegable. La propuesta de convertirla en desplegable se revirtió por petición del usuario.
+- `jquery-panel.js` tiene lógica para `#btn-menu` y `#opciones-menu`, pero esos IDs no existen en el encabezado actual. El menú del panel sí usa `#menu-toggle` y `#menu-movil`.
+- `remoto.js` solicita `datos.json` tanto con `fetch` como con `$.getJSON`; ese archivo no está presente actualmente. Por eso las cargas correctas fallan hasta que se agregue el JSON con `negocio.nombre` y `productos`. El botón "Probar un error" solicita `no-existe.json` intencionalmente.
+- Para probar solicitudes `fetch`, servir el proyecto por HTTP con Five Server. Abrir `index.html` como `file://` puede impedir la lectura del JSON por las restricciones del navegador.
+- jQuery se referencia desde `https://code.jquery.com/jquery-3.7.1.min.js`; no hay una copia local de la biblioteca en el directorio del proyecto.

@@ -76,4 +76,30 @@ console.log("70123456 válido:", PATRONES.telefono.test("70123456"));
 console.log("7012 válido:", PATRONES.telefono.test("7012"));
 console.log("ana@correo.bo válido:", PATRONES.correo.test("ana@correo.bo"));
 
+/* ── 8. MENÚ DESPLEGABLE DE LA FARMACIA ── */
+
+const btnMenu = document.querySelector("#btn-menu");
+const opcionesMenu = document.querySelector("#opciones-menu");
+
+if (btnMenu && opcionesMenu) {
+    btnMenu.addEventListener("click", () => {
+        const estaAbierto =
+            btnMenu.getAttribute("aria-expanded") === "true";
+
+        opcionesMenu.hidden = estaAbierto;
+
+        btnMenu.setAttribute(
+            "aria-expanded",
+            String(!estaAbierto)
+        );
+    });
+
+    opcionesMenu.querySelectorAll("a").forEach(enlace => {
+        enlace.addEventListener("click", () => {
+            opcionesMenu.hidden = true;
+            btnMenu.setAttribute("aria-expanded", "false");
+        });
+    });
+}
+
 // ── 7. LA VALIDACIÓN DE VERDAD NO ESTÁ AQUÍ ─────────────────────────────
